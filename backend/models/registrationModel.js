@@ -15,18 +15,15 @@ const registrationSchema = new mongoose.Schema(
       type: String,
       required: true,
     },
-    confirmpassword: {
-      type: String,
-      required: true,
-    },
     role: {
       type: String,
-      required: true,
-      enum: ["user", "admin"],
-      default: "user",
+      enum: ["User", "Admin"],
+      default: "User",
     },
   },
-  { timestamps: true }
+  {
+    timestamps: true,
+  }
 );
 
 export default mongoose.model("Registration", registrationSchema);

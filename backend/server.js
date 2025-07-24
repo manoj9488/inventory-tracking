@@ -2,14 +2,18 @@ import express from 'express';
 import mongoose from 'mongoose';
 import dotenv from 'dotenv';
 import cors from 'cors';
+
 dotenv.config();
 const app = express();
-
 
 app.use(express.json()); 
 app.use(cors());
 import connectDB from './config/db.js';
 connectDB();
+
+import registrationRoutes from './routes/registrationrouts.js';
+app.use('/api/registration', registrationRoutes);
+
 const port = process.env.PORT || 5000;
 
 app.listen(port, () => {
