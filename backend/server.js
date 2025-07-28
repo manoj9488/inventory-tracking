@@ -14,6 +14,9 @@ connectDB();
 import registrationRoutes from './routes/registrationrouts.js';
 app.use('/api/registration', registrationRoutes);
 
+import LoginRoutes from './routes/Loginroutes.js';
+app.use('/api/login', LoginRoutes);
+
 const port = process.env.PORT || 5000;
 
 app.listen(port, () => {

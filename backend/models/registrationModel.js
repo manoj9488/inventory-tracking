@@ -18,8 +18,8 @@ const registrationSchema = new mongoose.Schema(
     role: {
       type: String,
       enum: ["User", "Admin"],
-      default: "User",
-    },
+      required: true,
+     },
   },
   {
     timestamps: true,
@@ -27,3 +27,4 @@ const registrationSchema = new mongoose.Schema(
 );
 
 export default mongoose.model("Registration", registrationSchema);
+
