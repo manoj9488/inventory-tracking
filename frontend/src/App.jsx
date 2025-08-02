@@ -1,28 +1,25 @@
-import { useState } from 'react'
-import register from './components/Register.jsx'
-import {Route, Routes} from 'react-router-dom'
-import './App.css'
+import React from "react";
+import { Routes, Route } from "react-router-dom";
+
+import Register from "./components/Register";
+import Login from "./components/Login";
+import Dashboard from "./components/UserDashboard";
+import Admindashboard from "./components/AdminDashboard";
+import AddProduct from "./components/addproduct";
+
 
 function App() {
-
   return (
-    <div>
-      <label htmlFor="name">Name</label>
-      <input type="text"placeholder='Enter your name' />
-      <label htmlFor="email"></label>
-      <input type="email" placeholder='Enter your email' />
-      <label htmlFor="password"></label>
-      <input type="password" placeholder='Enter your password' />
-      <button>Register</button>
-
+    
       <Routes>
-        <Route path="/register" element={<register />} />
-
+        <Route path='/register' element={<Register />} />
+        <Route path="/" element={<Login />} />
+        <Route path="/dashboard" element={<Dashboard />} />
+        <Route path="/admindashboard" element={<Admindashboard />} /> 
+        <Route path="/addproduct" element={<AddProduct />} />
       </Routes>
-
-        
-    </div>
-  )
+    
+  );
 }
 
-export default App
+export default App;
