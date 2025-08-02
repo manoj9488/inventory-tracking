@@ -2,6 +2,7 @@ import React from 'react'
 import { useNavigate } from 'react-router-dom';
 
 
+
 export default function admindashboard() {
   const navigate = useNavigate();
   const handleLogout = () => {
@@ -12,18 +13,21 @@ export default function admindashboard() {
     navigate('/addproduct');
   };
 
+  const navigatetouserdashboard = () => {
+    navigate('/dashboard');
+  };
+
   const products = [
-    { id: 1, name: 'Product 1', price: '$10'
-    },
-    { id: 2, name: 'Product 2', price: '$20'
-    },
-    { id: 3, name: 'Product 3', price: '$30'
-    }
+    { name: 'Product 1', price: '$10' },
+    { name: 'Product 2', price: '$20' },
+    { name: 'Product 3', price: '$30' },
+    { name: 'Product 4', price: '$40' },
+    { name: 'Product 5', price: '$50' }
+
   ];
   return (
     <div>
         <div>admindashboard</div>
-        <button onClick={handleLogout}>Logout</button>
         <div>
           <h2>Product List</h2>
           <table classname ="min-w-full border-collapse block md:table">
@@ -31,8 +35,25 @@ export default function admindashboard() {
             <tbody classname="block md:table-row-group"></tbody>
             {products.map((product, index) => (
             <tr key={index} className='bg-white border-b md:table-row'>
-              <td className='p-4 md:table=cell'>{product.name}</td>
-              <td className='p-4 md:table=cell'>{product.price}</td>
+              <td className='p-2 md:table-cell'>{product.name}</td>
+              <td className='p-2 md:table-cell'>{product.price}</td> 
+              <td className='p-2 md:table-cell'>
+                <button 
+                  onclick ={() => alert("Editing " + product.name)}
+                  className="px-4 py-2 bg-blue-500 text-white rounded-lg hover:bg-blue-600"
+                >
+                  Edit
+                </button>
+              </td>
+              <td className='p-2 md:table-cell'>
+                <button 
+                  onClick={() => alert(`Deleting ${product.name}`)}
+                  className="px-4 py-2 bg-red-500 text-white rounded-lg hover:bg-red-600"
+                >
+                  Delete
+                </button>
+              </td> 
+
             </tr>
             ))}
           </table>
@@ -55,7 +76,7 @@ export default function admindashboard() {
         <div className="mt-4">
           <h2 className="text-xl font-semibold">User Management</h2>
           <button 
-            onClick={() => alert('View Users functionality not implemented yet')}
+            onClick={navigatetouserdashboard}
             className="mt-2 px-4 py-2 bg-green-500 text-white rounded-lg hover:bg-green-600"
           >
             View Users
@@ -89,7 +110,7 @@ export default function admindashboard() {
         <div className="mt-4">
           <h2 className="text-xl font-semibold">Logout</h2>
           <button 
-            onClick={() => alert('Logout functionality not implemented yet')}
+            onClick={handleLogout}
             className="mt-2 px-4 py-2 bg-fuchsia-500 text-white rounded-lg hover:bg-fuchsia-600"
           >
             Logout
