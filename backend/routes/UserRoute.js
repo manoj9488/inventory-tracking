@@ -5,5 +5,4 @@ import { protect } from "../middleware/Authmiddleware.js";
 const router = express.Router();
 
 router.get("/stocks", protect, getStocks);
-
 export default router;
