@@ -1,7 +1,7 @@
 import React from 'react'
 import { useNavigate } from 'react-router-dom';
 
-
+  
 
 export default function admindashboard() {
   const navigate = useNavigate();
@@ -25,16 +25,20 @@ export default function admindashboard() {
     { name: 'Product 5', price: '$50' }
 
   ];
-  return (
-    <div>
-        <div>admindashboard</div>
-        <div>
+    
+
+  return (   
+    <>
+    <div className='bg-gray-300'>admindashboard</div>
+      <div>
           <h2>Product List</h2>
           <table classname ="min-w-full border-collapse block md:table">
             <thead classname="block md:table-header-group"></thead>
             <tbody classname="block md:table-row-group"></tbody>
-            {products.map((product, index) => (
-            <tr key={index} className='bg-white border-b md:table-row'>
+            {products.map((product, index) => {
+              return(
+                <>
+                 <tr key={index} className='bg-white border-b md:table-row'>
               <td className='p-2 md:table-cell'>{product.name}</td>
               <td className='p-2 md:table-cell'>{product.price}</td> 
               <td className='p-2 md:table-cell'>
@@ -54,10 +58,14 @@ export default function admindashboard() {
                 </button>
               </td> 
 
-            </tr>
-            ))}
+            </tr></>
+              )
+            }
+            
+          
+          )}    
           </table>
-        </div>
+      </div>
         <div className="mt-4">
           <h2 className="text-xl font-semibold">Admin Actions</h2>
           <button 
@@ -69,6 +77,7 @@ export default function admindashboard() {
           <button 
             onClick={() => alert('Delete Product functionality not implemented yet')}
             className="mt-2 ml-2 px-4 py-2 bg-red-500 text-white rounded-lg hover:bg-red-600"
+        
           >
             Delete Product
           </button>
@@ -116,9 +125,9 @@ export default function admindashboard() {
             Logout
           </button>   
         </div>
-      </div>
+        
+      </>
    
-              
 
   )
 }
