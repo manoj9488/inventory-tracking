@@ -183,7 +183,7 @@ export default function UserInfo() {
                           </div>
                           <div>
                             <div className="text-sm font-medium text-gray-900">{user.name}</div>
-                            <div className="text-xs text-gray-500">ID: {user._id.slice(-6)}</div>
+                        
                           </div>
                         </div>
                       </td>

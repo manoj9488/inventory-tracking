@@ -3,6 +3,7 @@ import registrationModel from "../models/registrationModel.js";
 import jwt from "jsonwebtoken";
 
 
+
 // export const loginUser = async (req, res) => {
 //  try{
 //     const { email, password } = req.body;
