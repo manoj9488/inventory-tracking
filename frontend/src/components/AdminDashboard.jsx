@@ -110,7 +110,7 @@ export default function AdminDashboard() {
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-slate-50 to-blue-50">
-      {/* Header */}
+     
       <header className="bg-white shadow-sm border-b border-slate-200 animate-slide-down">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex justify-between items-center h-16">
@@ -147,7 +147,7 @@ export default function AdminDashboard() {
       </header>
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
-        {/* Stats Cards */}
+        
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
           <div className="bg-white rounded-xl shadow-sm p-6 border border-slate-200 animate-fade-in-up hover:shadow-lg hover:scale-105 transition-all duration-300" style={{animationDelay: '0.1s'}}>
             <div className="flex items-center">
@@ -239,7 +239,7 @@ export default function AdminDashboard() {
           </div>
         </div>
 
-        {/* Main Content */}
+        
         <div className="bg-white rounded-xl shadow-sm border border-slate-200 animate-slide-up">
           <div className="px-6 py-4 border-b border-slate-200">
             <div className="flex justify-between items-center">
@@ -255,13 +255,13 @@ export default function AdminDashboard() {
             </div>
           </div>
 
-          {/* Add Form */}
+          
           {showAddForm && (
             <div className="px-6 py-4 bg-gray-50 border-b border-slate-200 animate-slide-down">
               <div className="grid grid-cols-1 md:grid-cols-4 gap-4">
                 <input
                   type="text"
-                  placeholder="Item Name"
+                  placeholder="Product Name"
                   value={newProduct.itemName}
                   onChange={(e) =>
                     setNewProduct({ ...newProduct, itemName: e.target.value })
@@ -309,7 +309,7 @@ export default function AdminDashboard() {
             </div>
           )}
 
-          {/* Table Content */}
+          
           <div className="overflow-x-auto">
             {loading ? (
               <div className="p-8 text-center">

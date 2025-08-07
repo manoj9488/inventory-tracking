@@ -35,7 +35,7 @@ export default function UserDashboard() {
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-blue-50 to-indigo-100">
-      {/* Header */}
+      
       <header className="bg-white shadow-lg border-b animate-slide-down">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex justify-between items-center py-6">
@@ -56,7 +56,7 @@ export default function UserDashboard() {
       </header>
 
       <main className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
-        {/* Welcome Section */}
+       
         <div className="bg-white rounded-xl shadow-lg p-6 mb-8 border border-gray-200 animate-fade-in-up">
           <div className="flex items-center justify-between">
             <div className="animate-slide-right">
@@ -80,7 +80,7 @@ export default function UserDashboard() {
           </div>
         </div>
 
-        {/* Search Section */}
+        
         <div className="bg-white rounded-xl shadow-lg p-6 mb-8 border border-gray-200 animate-slide-up">
           <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
             <h3 className="text-xl font-semibold text-gray-900 animate-fade-in">Product Inventory</h3>
@@ -97,7 +97,7 @@ export default function UserDashboard() {
           </div>
         </div>
 
-        {/* Products Table */}
+        
         <div className="bg-white rounded-xl shadow-lg overflow-hidden border border-gray-200 animate-fade-in-up">
           {loading ? (
             <div className="flex flex-col justify-center items-center py-20">
@@ -193,7 +193,7 @@ export default function UserDashboard() {
           )}
         </div>
 
-        {/* Stats Cards for Mobile */}
+        
         <div className="md:hidden mt-8 grid grid-cols-2 gap-4 animate-slide-up">
           <div className="bg-white rounded-lg shadow p-4 text-center border border-gray-200 transform hover:scale-105 hover:shadow-lg transition-all duration-300 animate-bounce-slow">
             <div className="text-2xl font-bold text-blue-600 animate-count-up">{products.length}</div>
@@ -290,7 +290,7 @@ export default function UserDashboard() {
         }
         
         .animate-slide-left {
-          animation: slide-left 0.8s ease-out;
+          animation: slide-left 0.8s ease-out;{/* Stats Cards for Mobile */}
         }
         
         .animate-bounce-slow {

@@ -1,5 +1,5 @@
 import Stock from "../models/stocksModel.js";
-import User from "../models/registrationModel.js";
+
 
 export const updateStock = async (req, res) => {
   try {
@@ -22,8 +22,6 @@ export const deleteStock = async (req, res) => {
   await Stock.findByIdAndDelete(req.params.id);
   res.json({ message: "Stock deleted" });
 };
-
-
 
 
 export const createStock = async (req, res) => {

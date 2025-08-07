@@ -1,8 +1,8 @@
 import Registration from "../models/registrationModel.js";
 import bcrypt from "bcryptjs";
-import jwt from "jsonwebtoken";
 
-export const userRegistration = async (req, res) => {
+
+export const userRegistration = async (req, res) => {0 
   try {
     const { name, email, password,role } = req.body;
     const hashPassword = await bcrypt.hash(password, 10);
@@ -42,5 +42,14 @@ export const getRegistration = async (req, res) => {
     res.status(200).json(registrations);
   } catch (error) {
     res.status(500).json({ message: "Failed to fetch registrations", error });
+  }
+};
+
+export const deleteuser = async (req, res) => {
+  try {
+    await Registration.findByIdAndDelete(req.params.id);
+    res.status(200).json({ message: "User deleted successfully" });
+  } catch (error) {
+    res.status(500).json({ message: "Failed to delete user", error });
   }
 };
